@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELECCIONES VIRTUALES</title>
+    <link rel="shortcut icon" href="IMG/eleccion.png" type="image/x-icon">
+    <link rel="stylesheet" href="CSS/estilos.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<!-- INICIO DE IMPLEMENTACION PWA-->
+<meta name="theme-color" content="#F0DB4F">
+<meta name="MobileOptimized" content="width">
+<meta name="HandheldFriendly" content="true">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="./eleccion.png">
+<link rel="apple-touch-startup-image" href="./eleccion.png">
+<link rel="manifest" href="/manifest.json">
+
+<!-- FIN IMPLEMENTACION PWA-->
+
+
+
+    
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="JS/funcion.js"></script>
+</head>
+
+<body>
+    <header>
+        <section class="textos-header">
+            <h1>ELECCIONES FEDERALES</h1>
+            <h2>Desliza hacia abajo y selecciona el botón del partido al que quieres dar tu voto</h2>
+        </section>
+        <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+                style="height: 100%; width: 100%;">
+                <path d="M-3.67,18.25 C320.82,243.25 352.99,-55.75 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+                    style="stroke: none; fill: #fff;"></path>
+            </svg></div>
+   </header>
+    <div class="main">
+        <div class="titulo">
+            <h2 class="titulo">BOLETA ELECTORAL 2024</h2>
+        </div>
+        <div class="boleta">
+            <div class="boleta-cont">
+                <div class="image">
+                    <img src="IMG/pp.png" alt="">
+                </div>
+                <div class="texto-partidos">
+                    <div class="nombrePartido">
+                        <h3>PARTIDO POPULAR</h3>
+                    </div>
+                    <div class="nombreCandidato">
+                        <p>Candidato: Jorge Alvaro Díaz</p>
+                    </div>
+                    <div class="panelButtons">
+                        <button type="submit" onclick="PP()">VOTAR</button>
+                    </div>
+                </div>
+            </div>
+            <div class="boleta-cont">
+                <div class="image">
+                    <img src="IMG/Ciudadanos.jpg" alt="">
+                </div>
+                <div class="texto-partidos">
+                    
+                    <div class="nombrePartido">
+                        <h3>CIUDADANOS</h3>
+                    </div>
+                    <div class="nombreCandidato">
+                        <p>Candidata: Andrea Marques Gómez</p>
+                    </div>
+                    <div class="panelButtons">
+                        <button type="submit" onclick="CS()">VOTAR</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="boleta-cont">
+                <div class="image">
+                    <img src="IMG/psoe.png" alt="">
+                </div>
+                <div class="texto-partidos">
+                    <div class="nombrePartido">
+                        <h3>PARTIDO SOCIALISTA OBRERO ESPAÑOL</h3>
+                    </div>
+                    <div class="nombreCandidato">
+                        <p>Candidato: Roman Lopez Aguilar</p>
+                    </div>
+                    <div class="panelButtons">
+                        <button type="submit"
+                            onclick="PSOE()">VOTAR</button>
+                    </div>
+                </div>
+            </div>
+            <div class="boleta-cont">
+                <div class="image">
+                    <img src="IMG/podemos.jpg" alt="">
+                </div>
+                <div class="texto-partidos">
+                    <div class="nombrePartido">
+                        <h3>PODEMOS</h3>
+                    </div>
+                    <div class="nombreCandidato">
+                        <p>Candidata: Elena Morales Díaz</p>
+                    </div>
+                    <div class="panelButtons">
+                        <button type="submit" onclick="PODEMOS()">VOTAR</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <footer>
+        <h4>Copyright &copy by Victor Antonio Soto Villegas</h4>
+    </footer>
+</body>
+
+</html>
