@@ -158,7 +158,17 @@ header .textos-header{
 .panelButtons{
     margin-left: 15px;
 }
-
+.iniciar {
+ display: inline-block;
+ padding: 7px 0;
+ width: 100px;
+   border: 1px solid #fff;
+   border-radius: 50px;
+   text-align: center;
+   text-decoration: none;
+    color: crimson;
+    background: #fff;
+}
 /* RESPONSIVIDAD*/
 @media screen and (max-width:900px){
     .boleta{
