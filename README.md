@@ -1,2 +1,3 @@
-# victorsoto2021.github.io
+# eleccionesvirtuales.github.io
 Elecciones virtuales
+VICTOR ANTONIO SOTO VILLEGAS
