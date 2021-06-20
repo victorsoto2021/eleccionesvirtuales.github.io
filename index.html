@@ -55,6 +55,7 @@
     <script>
         //@ts-check
         /**Conexion al sistema de autenticaion de firebase */
+        const auth = firebase.auth();
         //@ts-ignore
         const provider = new firebase.authGoogleAuthProvider();
         /*configura el proveedor de google para que permita seleccionar de una lissta */
