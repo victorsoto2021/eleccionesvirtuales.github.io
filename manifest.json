@@ -2,7 +2,7 @@
     "name": "Elecciones Virtuales",
     "short_name": "Elecciones Virtuales",
     "description": "Sistema de elecciones",
-    "background_color": "#D50080",
+    "background_color": "#2B2B2B",
     "theme_color":"#F0DB4F",
     "orientation":"portrait",
     "display":"standalone",
