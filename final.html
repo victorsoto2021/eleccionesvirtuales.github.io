@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUTENTICACION</title>
+    <link rel="shortcut icon" href="IMG/eleccion.png" type="image/x-icon">
+    <link rel="stylesheet" href="CSS/estilos.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- INICIO DE IMPLEMENTACION PWA-->
+    <meta name="theme-color" content="#F0DB4F">
+    <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="./eleccion.png">
+    <link rel="apple-touch-startup-image" href="./eleccion.png">
+    <link rel="manifest" href="/manifest.json">
+    <!-- FIN IMPLEMENTACION PWA-->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="JS/init.js"></script>
+
+
+</head>
+
+<body>
+    <header>
+        <div class=textos-header>
+            <h1>¡GRACIAS POR PARTICIPAR!</h1>
+            <br>
+            <div class="boton-terminar">
+                <button type="button" class="boton-terminar2" onclick="terminarSesion()">TERMINAR SESION</button>
+            </div>
+
+        </div>
+         
+      
+
+
+        
+            
+        
+   
+    </header>
+
+    <footer>
+        <h4>Copyright &copy by Victor Antonio Soto Villegas</h4>
+    </footer>
+
+
+    <script>
+        //@ts-check
+        /**Conexion al sistema de autenticaion de firebase */
+        //@ts-ignore
+        const auth = firebase.auth();
+        /**Tipo de autenticacion de usuario, en este caso google */ 
+        //@ts-ignore
+        const provider = new firebase.auth.GoogleAuthProvider();
+        /*configura el proveedor de google para que permita seleccionar de una lissta */
+        provider.setCustomParameters({ prompt: "select_account" });
+        /* recibe una funcion que se invoca cada que hay un cambio en la autenticacion y recibe el modelo de las caracteristicas de usuario */
+        auth.onAuthStateChanged(
+            usuarioAuth => {
+                if (usuarioAuth && usuarioAuth.email) {
+                    //usuario aceptado
+                    //@ts-ignore Muestra el mail registrado en google
+                    email.value = usuarioAuth.email;
+                    nombre.value = usuarioAuth.displayName;
+                    avatar.src = usuarioAuth.photoURL;
+                } else {
+                    //no se ha iniciado sesion, pide datos para iniciar sesion
+                    auth.signInWithRedirect(provider);
+                }
+            },
+            //funcion que se invoca si hay error al verfificar usuario
+            procesaError
+        );
+                /**TERMINA LA SESION */
+
+         async function terminarSesion(){
+             try{
+                 await auth.signOut();
+             }catch (e){
+                 procesaError(e);
+             }
+         }       
+/**Procesa un error, muestra el objet o en la consola y un alerta con mensaje
+ *@param {Error} e desripcion del error */
+function procesaError(e){
+    console.log(e);
+    alert(e.message);
+}
+
+    </script>
+</body>
+
+</html>
